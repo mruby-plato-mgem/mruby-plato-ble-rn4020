@@ -51,14 +51,14 @@ module PlatoDevice
       cmd 'SUW,' + CHAR_UUID + ',' + ss
     end
 
-    def self.open(name='Plato', datasize=10)
+    def self.open(name='Plato', datasize=30)
       bt = self.new(name)
       bt.start_custom_service(datasize)
       bt
     end
 
     def puts(v)
-      chardata = v
+      self.chardata = v
     end
 
     # private
